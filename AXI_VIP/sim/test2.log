@@ -1,0 +1,387 @@
+# vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit mem_cov2;run -all; exit" -wlf wave_file2.wlf -l test2.log -sv_seed 12345 work.top "+UVM_TESTNAME=fixed_burst_test" "+UVM_VERBOSITY=UVM_HIGH" 
+# Start time: 18:21:40 on Jul 10,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 2022.1_2 linux_x86_64 Apr  2 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.axi_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.axi_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.axi_if(fast__2)
+# Loading /home/cad/eda/Mentor_Graphics/Questasim/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+#  log -r /* 
+# coverage save -onexit mem_cov2
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test fixed_burst_test...
+# -------------------------------65951
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ---------------------------------------------------------------------
+# Name                          Type                        Size  Value
+# ---------------------------------------------------------------------
+# uvm_test_top                  fixed_burst_test            -     @474 
+#   env_h                       env                         -     @490 
+#     master_agt_top            master_agent_top            -     @505 
+#       master_agt[0]           master_agent                -     @520 
+#         master_drvh           master_driver               -     @539 
+#           rsp_port            uvm_analysis_port           -     @554 
+#           seq_item_port       uvm_seq_item_pull_port      -     @546 
+#         master_monh           master_monitor              -     @531 
+#           mst_monitor_port_r  uvm_analysis_port           -     @681 
+#           mst_monitor_port_w  uvm_analysis_port           -     @673 
+#         master_seqrh          master_sequencer            -     @562 
+#           rsp_export          uvm_analysis_export         -     @569 
+#           seq_item_export     uvm_seq_item_pull_imp       -     @663 
+#           arbitration_queue   array                       0     -    
+#           lock_queue          array                       0     -    
+#           num_last_reqs       integral                    32    'd1  
+#           num_last_rsps       integral                    32    'd1  
+#     sb_h                      sb                          -     @497 
+#       mst_fifo_r[0]           uvm_tlm_analysis_fifo #(T)  -     @742 
+#         analysis_export       uvm_analysis_imp            -     @781 
+#         get_ap                uvm_analysis_port           -     @773 
+#         get_peek_export       uvm_get_peek_imp            -     @757 
+#         put_ap                uvm_analysis_port           -     @765 
+#         put_export            uvm_put_imp                 -     @749 
+#       mst_fifo_w[0]           uvm_tlm_analysis_fifo #(T)  -     @695 
+#         analysis_export       uvm_analysis_imp            -     @734 
+#         get_ap                uvm_analysis_port           -     @726 
+#         get_peek_export       uvm_get_peek_imp            -     @710 
+#         put_ap                uvm_analysis_port           -     @718 
+#         put_export            uvm_put_imp                 -     @702 
+#       slv_fifo_r[0]           uvm_tlm_analysis_fifo #(T)  -     @836 
+#         analysis_export       uvm_analysis_imp            -     @875 
+#         get_ap                uvm_analysis_port           -     @867 
+#         get_peek_export       uvm_get_peek_imp            -     @851 
+#         put_ap                uvm_analysis_port           -     @859 
+#         put_export            uvm_put_imp                 -     @843 
+#       slv_fifo_w[0]           uvm_tlm_analysis_fifo #(T)  -     @789 
+#         analysis_export       uvm_analysis_imp            -     @828 
+#         get_ap                uvm_analysis_port           -     @820 
+#         get_peek_export       uvm_get_peek_imp            -     @804 
+#         put_ap                uvm_analysis_port           -     @812 
+#         put_export            uvm_put_imp                 -     @796 
+#     slave_agt_top             slave_agent_top             -     @512 
+#       slave_agt[0]            slave_agent                 -     @884 
+#         slave_drvh            slave_driver                -     @903 
+#           rsp_port            uvm_analysis_port           -     @918 
+#           seq_item_port       uvm_seq_item_pull_port      -     @910 
+#         slave_monh            slave_monitor               -     @895 
+#           slv_monitor_port_r  uvm_analysis_port           -     @1045
+#           slv_monitor_port_w  uvm_analysis_port           -     @1037
+#         slave_seqrh           slave_sequencer             -     @926 
+#           rsp_export          uvm_analysis_export         -     @933 
+#           seq_item_export     uvm_seq_item_pull_imp       -     @1027
+#           arbitration_queue   array                       0     -    
+#           lock_queue          array                       0     -    
+#           num_last_reqs       integral                    32    'd1  
+#           num_last_rsps       integral                    32    'd1  
+# ---------------------------------------------------------------------
+# 
+# 
+# 
+# 
+################################################ BASE TEST ################################################
+# 
+# 
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=3224699661 3224699661
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=1040389116 1040389116 1040389116 1040389116 1040389116 1040389116
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=1266882180 1266882180
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=4235056673
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=1 1
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2229039721 2229039721
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=536468369 536468369 536468369 536468369 536468369 536468369 536468369
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2763198026 2763198026
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=1523862972 1523862972 1523862972 1523862972 1523862972 1523862972 1523862972 1523862972 1523862972 1523862972 1523862972 1523862972
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=4 4
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2667701798 2667701798
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256 2848001256
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=4 4
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=1308018333 1308018333
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=3163841732 3163841732 3163841732 3163841732 3163841732 3163841732 3163841732 3163841732 3163841732 3163841732 3163841732
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2916877379 2916877379
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=3420281212 3420281212 3420281212 3420281212 3420281212 3420281212
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=8 8
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=3789988517 3789988517
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=339795638 339795638 339795638 339795638 339795638 339795638 339795638
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=4100333445 4100333445
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=2419672074 2419672074 2419672074 2419672074 2419672074
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2546529061 2546529061
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=1124399153 1124399153 1124399153 1124399153 1124399153 1124399153 1124399153 1124399153 1124399153 1124399153 1124399153
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2271636361 2271636361
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=1851070032 1851070032 1851070032 1851070032 1851070032 1851070032
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=30330024 30330024
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=1407798232 1407798232 1407798232 1407798232 1407798232 1407798232 1407798232 1407798232 1407798232 1407798232
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=1 1
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=3596294025 3596294025
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=75933834 75933834 75933834 75933834
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2745142850 2745142850
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=3372319651 3372319651 3372319651 3372319651 3372319651 3372319651 3372319651
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=4 4
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=762729838 762729838
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=80397712 80397712 80397712 80397712 80397712 80397712 80397712
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=4 4
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=3936829311 3936829311
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=4041375150 4041375150 4041375150 4041375150
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=8 8
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=3266523032 3266523032
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=2510365680 2510365680 2510365680 2510365680 2510365680
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=1 1
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=4138768369 4138768369
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361 751290361
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=2 2
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=3249342844 3249342844
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=2725999887 2725999887 2725999887 2725999887 2725999887 2725999887 2725999887 2725999887 2725999887 2725999887
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=1 1
+# 
+# 
+# ////////////////////// write_addr //////////////////////////
+# wr_addr=2947611986 2947611986
+# ////////////////////// read_addr ///////////////////////////
+# rd_add=252709536 252709536 252709536 252709536
+# ////////////////////// WSTRB ///////////////////
+# WSTRB=4 4
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# ---------<<<<<-------COMPARISION SUCCESSFUL-------->>>>>--------
+# 
+# 
+# 
+# 
+################################################ FIXED BURST TEST ################################################
+# 
+# 
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 14630: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# 
+# 
+# ------------------------ SCOREBOARD REPORT -----------------------
+# Transations Verified = 20/20
+# AXI VIP Coverage     = 62.41/100.00
+# 
+# --- AXI VIP Coverage ---
+# Write Ctrl Coverage (wr_cg)       = 46.30%
+# Write Strobe Coverage (strobe_cg) = 50.00%
+# Read Ctrl Coverage (rd_cg)        = 53.33%
+# Read Resp Coverage (rd_resp_cg)   = 100.00%
+# Total Combined Coverage           = 62.41%
+# ------------------------------------------------------------------
+# 
+# 
+# 
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     3
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : /home/cad/eda/Mentor_Graphics/Questasim/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 14630 ns  Iteration: 58  Instance: /top
+# Saving coverage database on exit...
+# End time: 18:21:41 on Jul 10,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
