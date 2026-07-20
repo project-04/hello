@@ -5,7 +5,7 @@ help:
 	-@echo "make help   	=> Generate this help menu      "
 	-@echo "######################################################################"
 
-synth:
+synth: clean
 	#dc_shell -f synth.tcl
 	/home/cad/eda/SYNOPSYS/Design_Compiler_2022.03/syn/T-2022.03-SP4/linux64/syn/bin/dc_shell -f synth.tcl
 

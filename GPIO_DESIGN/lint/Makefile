@@ -6,16 +6,16 @@ help:
 	-@echo "make help   	=> Generate this help menu      "
 	-@echo "######################################################################"
 
-top_lint:
+top_lint: clean
 	$(VC_STATIC_HOME)/bin/vc_static_shell -mode64 -f gpio_top_lint.tcl
 	cat report_lint*
 	
-mod_lint:
+mod_lint: clean
 	$(VC_STATIC_HOME)/bin/vc_static_shell -mode64 -f single_module_lint.tcl
 	cat report_lint*
 
 clean:
-	 rm -rf novas* vcst* *.txt
+	 rm -rf novas* vcst* *.txt .dw_map_file .vcstPref
 
 
 
